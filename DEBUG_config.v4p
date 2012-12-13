@@ -56,70 +56,6 @@
    <PIN pinname="Shadow Map" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Phong (EX9.MRE Static)" filename="Materials\Phong\Phong (EX9.MRE Static).v4p" nodename="Phong (EX9.MRE Static)" componentmode="Hidden" id="1" debug="0">
-   <BOUNDS type="Node" left="3195" top="5385" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="0" top="6120" width="18945" height="10080">
-   </BOUNDS>
-   <PIN pinname="Layer MRT" visible="1">
-   </PIN>
-   <PIN pinname="Layer VSM" visible="1">
-   </PIN>
-   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Emission Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Ambient Color" slicecount="1" values="|0.11307,0.01475,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Object Color" slicecount="1" values="|0.80538,0.80538,0.80538,1.00000|">
-   </PIN>
-   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Specular Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Shade all lights" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Power" slicecount="1" values="50">
-   </PIN>
-   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.15">
-   </PIN>
-   <PIN pinname="Light Attenuation 0" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Light Attenuation 2" slicecount="1" values="0.38">
-   </PIN>
-   <PIN pinname="Shadow Bias" slicecount="1" values="0.24">
-   </PIN>
-   <PIN pinname="Shadow Contrast" slicecount="1" values="0.1">
-   </PIN>
-   <PIN pinname="Displace" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Displacement Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Displacement Normal Radius" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Bump Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Normal Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="depth" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Specular Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Transform" visible="1">
-   </PIN>
-   <PIN pinname="Shadows Amount" slicecount="1" values="0.5">
-   </PIN>
-   <PIN pinname="Global Illumination Intensity" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Layer SM" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="7">
    <BOUNDS type="Node" left="2910" top="14970" width="100" height="100">
    </BOUNDS>
@@ -157,9 +93,9 @@
    <LINK srcnodeid="8" srcpinname="Transform Out" dstnodeid="0" dstpinname="Aspect Ratio Transform">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="5895" top="2175" width="0" height="0">
+   <BOUNDS type="Node" left="5910" top="2700" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5895" top="2175" width="480" height="480">
+   <BOUNDS type="Box" left="5910" top="2700" width="480" height="480">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
@@ -176,12 +112,10 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Shade all lights">
-   </LINK>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="30">
    <BOUNDS type="Node" left="3195" top="9765" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Layer 1" visible="1">
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
    </PIN>
@@ -194,8 +128,6 @@
    <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 1">
-   </LINK>
    <NODE systemname="Assets (EX9.Texture Source)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Source\Assets\Assets (EX9.Texture Source).v4p" nodename="Assets (EX9.Texture Source)" componentmode="Hidden" id="36">
    <BOUNDS type="Node" left="4755" top="3060" width="100" height="100">
    </BOUNDS>
@@ -250,8 +182,6 @@
    <PIN pinname="Pitch" slicecount="1" values="0.25">
    </PIN>
    </NODE>
-   <LINK srcnodeid="45" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
-   </LINK>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="285" top="6960" width="100" height="100">
    </BOUNDS>
@@ -336,10 +266,6 @@
    </NODE>
    <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="60" srcpinname="Output" dstnodeid="1" dstpinname="Displace">
-   </LINK>
-   <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="1" dstpinname="depth">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="77" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="3810" top="3750" width="0" height="0">
    </BOUNDS>
@@ -352,8 +278,6 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 1">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="78" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="3960" top="4320" width="0" height="0">
    </BOUNDS>
@@ -366,8 +290,6 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 2">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="79" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="3630" top="3195" width="0" height="0">
    </BOUNDS>
@@ -380,8 +302,6 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="79" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 0">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="82" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="5880" top="6795" width="0" height="0">
    </BOUNDS>
@@ -466,8 +386,6 @@
    </NODE>
    <LINK srcnodeid="97" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Shadows Enabled">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 1">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="144" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="5565" top="12825" width="0" height="0">
    </BOUNDS>
@@ -530,8 +448,6 @@
    <BOUNDS type="Node" left="1950" top="1740" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="154" srcpinname="Mesh" dstnodeid="1" dstpinname="Mesh">
-   </LINK>
    <LINK srcnodeid="153" srcpinname="Scene" dstnodeid="154" dstpinname="Scene">
    </LINK>
    <NODE systemname="Quad (DX9)" nodename="Quad (DX9)" componentmode="Hidden" id="155">
@@ -560,8 +476,118 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="Color" dstnodeid="155" dstpinname="Texture">
    </LINK>
+   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="47" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="157" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="7605" top="2820" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7605" top="2820" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Config" encoded="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Color (MRE.mdmod Config)" filename="Configs\Color (MRE.mdmod Config).v4p" nodename="Color (MRE.mdmod Config)" componentmode="Hidden" id="158">
+   <BOUNDS type="Node" left="7590" top="2010" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Light (MRE.mdmod Config)" filename="Configs\Light (MRE.mdmod Config).v4p" nodename="Light (MRE.mdmod Config)" componentmode="Hidden" id="159">
+   <BOUNDS type="Node" left="8985" top="2460" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="1" componentmode="Hidden" systemname="Phong (EX9.MRE Static)" filename="Materials\Phong\Phong (EX9.MRE Static).v4p" nodename="Phong (EX9.MRE Static)" debug="0">
+   <PIN pinname="Shade all lights">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Displace" visible="1">
+   </PIN>
+   <PIN pinname="depth" visible="1">
+   </PIN>
+   <PIN pinname="Light Attenuation 1">
+   </PIN>
+   <PIN pinname="Light Attenuation 2">
+   </PIN>
+   <PIN pinname="Light Attenuation 0">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Displacement Map" visible="1">
+   </PIN>
+   <PIN pinname="Config" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="3435" top="8685" width="18945" height="10080">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3195" top="5385" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Bump Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Normal Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer MRT" visible="1">
+   </PIN>
+   <PIN pinname="Layer VSM" visible="1">
+   </PIN>
+   <PIN pinname="Emission Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.11307,0.01475,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Object Color" slicecount="1" values="|0.80538,0.80538,0.80538,1.00000|">
+   </PIN>
+   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Specular Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="50">
+   </PIN>
+   <PIN pinname="Shadow Bias" slicecount="1" values="0.24">
+   </PIN>
+   <PIN pinname="Shadow Contrast" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Displacement Normal Radius" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Specular Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Shadows Amount" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Global Illumination Intensity" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Layer SM" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="159" srcpinname="Output" dstnodeid="1" dstpinname="Config">
+   </LINK>
    <LINK srcnodeid="47" srcpinname="Output" dstnodeid="1" dstpinname="Displacement Map">
    </LINK>
-   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="47" dstpinname="Input">
+   <LINK srcnodeid="154" srcpinname="Mesh" dstnodeid="1" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="79" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 0">
+   </LINK>
+   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 2">
+   </LINK>
+   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 1">
+   </LINK>
+   <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="1" dstpinname="depth">
+   </LINK>
+   <LINK srcnodeid="60" srcpinname="Output" dstnodeid="1" dstpinname="Displace">
+   </LINK>
+   <LINK srcnodeid="45" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Shade all lights">
    </LINK>
    </PATCH>

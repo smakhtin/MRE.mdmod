@@ -1571,9 +1571,9 @@
    <LINK srcnodeid="228" srcpinname="Output" dstnodeid="229" dstpinname="Input String">
    </LINK>
    <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="230">
-   <BOUNDS type="Node" left="8085" top="735" width="100" height="100">
+   <BOUNDS type="Node" left="8085" top="225" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8085" top="735" width="1275" height="885">
+   <BOUNDS type="Box" left="8085" top="225" width="1275" height="885">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
