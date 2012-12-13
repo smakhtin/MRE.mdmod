@@ -1,7 +1,8 @@
-//@author: dottore
-//@description: Draws a surface using the data position texture. shading by phong directional
+//@author: microdee
+//@description: Phong material for MRE.mdmod
 //@tags: 3d surface
-//@credits: 
+//@credits: dottore
+
 // --------------------------------------------------------------------------------------------------
 // PARAMETERS:
 // --------------------------------------------------------------------------------------------------
