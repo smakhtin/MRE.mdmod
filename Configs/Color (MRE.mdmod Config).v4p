@@ -35,6 +35,8 @@
    </PIN>
    <PIN pinname="Color Output" visible="1">
    </PIN>
+   <PIN pinname="Color Input" slicecount="1" values="|0.00000,0.66805,0.43447,1.00000|">
+   </PIN>
    </NODE>
    <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="3">
    <BOUNDS type="Node" left="4485" top="645" width="100" height="100">
@@ -45,6 +47,8 @@
    </PIN>
    <PIN pinname="Color Output" visible="1">
    </PIN>
+   <PIN pinname="Color Input" slicecount="1" values="|0.30976,0.27153,0.49634,1.00000|">
+   </PIN>
    </NODE>
    <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="4">
    <BOUNDS type="Node" left="6945" top="660" width="100" height="100">
@@ -54,6 +58,8 @@
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Object Color|">
    </PIN>
    <PIN pinname="Color Output" visible="1">
+   </PIN>
+   <PIN pinname="Color Input" slicecount="1" values="|0.61127,0.00000,0.21288,1.00000|">
    </PIN>
    </NODE>
    <NODE systemname="AsString (Color Hex)" nodename="AsString (Color Hex)" componentmode="Hidden" id="6">
@@ -113,7 +119,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="585" top="5310" width="870" height="315">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Output" encoded="0">
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Output">
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Output" dstnodeid="8" dstpinname="Input Node">

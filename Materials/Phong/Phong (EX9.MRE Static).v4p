@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\Materials\Phong\Phong (EX9.MRE Static).v4p" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\materials\Phong (EX9.MRE static).v4p" systemname="Phong (EX9.MRE static)">
-   <BOUNDS height="10080" left="1170" top="5370" type="Window" width="18945">
+   <PATCH nodename="C:\Users\algar_000\Documents\GitRepos\MRE.mdmod\Materials\Phong\Phong (EX9.MRE Static).v4p" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\materials\Phong (EX9.MRE static).v4p" systemname="Phong (EX9.MRE static)">
+   <BOUNDS height="10080" left="3435" top="8685" type="Window" width="18945">
    </BOUNDS>
    <NODE componentmode="InABox" id="24" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="480" top="25380" type="Node" width="0">
@@ -1339,7 +1339,7 @@
    </PIN>
    <PIN pinname="Position as Texture Coordinates">
    </PIN>
-   <PIN pinname="Normal Map" visible="1">
+   <PIN pinname="Normal Map" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="depth">
    </PIN>
@@ -1349,7 +1349,7 @@
    </PIN>
    <PIN pinname="size source XYZ" visible="1">
    </PIN>
-   <PIN pinname="Bump Map" visible="1">
+   <PIN pinname="Bump Map" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Shadows Amount" visible="1">
    </PIN>
@@ -1533,5 +1533,83 @@
    <LINK srcnodeid="220" srcpinname="Input Value" dstnodeid="100" dstpinname="Noise">
    </LINK>
    <LINK srcnodeid="210" srcpinname="Output" dstnodeid="100" dstpinname="shadowsAmount">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="227">
+   <BOUNDS type="Node" left="6435" top="720" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6435" top="720" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Config" encoded="0">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="JSONPath (JSON)" filename="..\..\..\VVVV.Nodes.JSON\bin\Debug\JSONParse.dll" nodename="JSONPath (JSON)" componentmode="Hidden" id="228">
+   <BOUNDS type="Node" left="6420" top="1635" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Objects" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="JSONPath Query" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="227" srcpinname="Output Node" dstnodeid="228" dstpinname="Objects">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="229" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6420" top="2400" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6420" top="2400" width="2640" height="3900">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="228" srcpinname="Output" dstnodeid="229" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="230">
+   <BOUNDS type="Node" left="8085" top="735" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8085" top="735" width="1275" height="885">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="3" values="EmissionColor,AmbientColor,SpecularColor" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="230" srcpinname="Output String" dstnodeid="228" dstpinname="JSONPath Query">
+   </LINK>
+   <NODE systemname="JSONPath (JSON)" filename="..\..\..\VVVV.Nodes.JSON\bin\Debug\JSONParse.dll" nodename="JSONPath (JSON)" componentmode="Hidden" id="231">
+   <BOUNDS type="Node" left="12150" top="2730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Objects" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="227" srcpinname="Output Node" dstnodeid="231" dstpinname="Objects">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="232" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="12120" top="3765" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12120" top="3765" width="4200" height="2835">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="231" srcpinname="Output" dstnodeid="232" dstpinname="Input String">
    </LINK>
    </PATCH>
