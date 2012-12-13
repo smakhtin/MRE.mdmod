@@ -1,0 +1,121 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
+   <PATCH nodename="C:\Users\algar_000\Documents\GitRepos\MRE.mdmod\Configs\Color (MRE.mdmod Config).v4p" systemname="Color (MRE.mdmod Config)" filename="C:\Users\algar_000\Documents\GitRepos\MRE.mdmod\Configs\Color (MRE.mdmod Config).v4p">
+   <BOUNDS type="Window" left="17040" top="7365" width="10875" height="6870">
+   </BOUNDS>
+   <NODE systemname="AddProperty (JSON)" filename="..\..\VVVV.Nodes.JSON\bin\Debug\JSONParse.dll" nodename="AddProperty (JSON)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="585" top="4200" width="1050" height="270">
+   </BOUNDS>
+   <PIN pinname="Property Names" slicecount="1" encoded="0" values="|EmissionColor AmbientColor SpecularColor|">
+   </PIN>
+   <PIN pinname="EmissionColor Value" visible="1">
+   </PIN>
+   <PIN pinname="AmbientColor Value" visible="1">
+   </PIN>
+   <PIN pinname="SpecularColor Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="1" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="585" top="570" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="585" top="570" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Input">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="0" dstpinname="JObject">
+   </LINK>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="2055" top="645" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2055" top="645" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Emission Color|">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="3">
+   <BOUNDS type="Node" left="4485" top="645" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4485" top="645" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Ambient Color|">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="6945" top="660" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6945" top="660" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Object Color|">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsString (Color Hex)" nodename="AsString (Color Hex)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2070" top="2700" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="3" values="|0.00000,1.00000,0.00000,1.00000|,|0.00000,1.00000,0.00000,1.00000|,|0.00000,1.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Zip (Color)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Zip (Color)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="2055" top="1905" width="4935" height="270">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Color Output" dstnodeid="5" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Color Output" dstnodeid="5" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Color Output" dstnodeid="5" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Unzip (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (String)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2085" top="3300" width="540" height="270">
+   </BOUNDS>
+   <PIN pinname="Output Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output 1" dstnodeid="0" dstpinname="EmissionColor Value">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output 2" dstnodeid="0" dstpinname="AmbientColor Value">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output 3" dstnodeid="0" dstpinname="SpecularColor Value">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="8" systemname="IOBox (Node)">
+   <BOUNDS type="Node" left="585" top="5310" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="585" top="5310" width="870" height="315">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="8" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
