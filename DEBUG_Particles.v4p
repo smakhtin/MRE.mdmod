@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="C:\Users\algar_000\Documents\GitRepos\MRE.mdmod\DEBUG_config.v4p" systemname="simpleTest" filename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\simpleTest.v4p">
+   <PATCH nodename="C:\Users\algar_000\Documents\GitRepos\MRE.mdmod\DEBUG_Particles.v4p" systemname="simpleTest" filename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\simpleTest.v4p">
    <BOUNDS type="Window" left="1920" top="1215" width="14415" height="12015">
    </BOUNDS>
    <NODE systemname="MRE (EX9.MRE mdmod)" filename="MRE (EX9.MRE mdmod).v4p" nodename="MRE (EX9.MRE mdmod)" componentmode="Hidden" id="0">
@@ -93,9 +93,9 @@
    <LINK srcnodeid="8" srcpinname="Transform Out" dstnodeid="0" dstpinname="Aspect Ratio Transform">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="5910" top="2700" width="0" height="0">
+   <BOUNDS type="Node" left="6105" top="4245" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5910" top="2700" width="480" height="480">
+   <BOUNDS type="Box" left="6105" top="4245" width="480" height="480">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
@@ -223,7 +223,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="60">
-   <BOUNDS type="Node" left="7155" top="4770" width="100" height="100">
+   <BOUNDS type="Node" left="7320" top="4785" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
    </PIN>
@@ -251,9 +251,9 @@
    <LINK srcnodeid="70" srcpinname="Layer" dstnodeid="0" dstpinname="Layer SM">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="72" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="7140" top="3960" width="0" height="0">
+   <BOUNDS type="Node" left="7305" top="3975" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="7140" top="3960" width="675" height="240">
+   <BOUNDS type="Box" left="7305" top="3975" width="675" height="240">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="-0.22">
    </PIN>
@@ -303,11 +303,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="82" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="5880" top="6795" width="0" height="0">
+   <BOUNDS type="Node" left="3675" top="7335" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5880" top="6795" width="795" height="720">
+   <BOUNDS type="Box" left="3675" top="7335" width="795" height="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" values="0.12,0.57,-0.12">
+   <PIN pinname="Y Input Value" slicecount="3" values="0.11,0.42,-0.14">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -319,11 +319,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="83" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="5865" top="7635" width="0" height="0">
+   <BOUNDS type="Node" left="3870" top="8355" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5865" top="7635" width="795" height="240">
+   <BOUNDS type="Box" left="3870" top="8355" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.17">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -331,11 +331,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="84" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="5865" top="7950" width="0" height="0">
+   <BOUNDS type="Node" left="4080" top="8760" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5865" top="7950" width="795" height="240">
+   <BOUNDS type="Box" left="4080" top="8760" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.02">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -343,11 +343,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="85" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="5865" top="8265" width="0" height="0">
+   <BOUNDS type="Node" left="4275" top="9075" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5865" top="8265" width="810" height="240">
+   <BOUNDS type="Box" left="4275" top="9075" width="810" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.84">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.91">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -355,11 +355,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="86" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="5865" top="8625" width="0" height="0">
+   <BOUNDS type="Node" left="4515" top="9390" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="5865" top="8625" width="795" height="240">
+   <BOUNDS type="Box" left="4515" top="9390" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.13">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.2">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -478,16 +478,6 @@
    </LINK>
    <LINK srcnodeid="36" srcpinname="Output" dstnodeid="47" dstpinname="Input">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="157" systemname="IOBox (Node)">
-   <BOUNDS type="Node" left="7605" top="2820" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="7605" top="2820" width="795" height="240">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Config">
-   </PIN>
-   </NODE>
    <NODE systemname="Color (MRE.mdmod Config)" filename="Configs\Color (MRE.mdmod Config).v4p" nodename="Color (MRE.mdmod Config)" componentmode="Hidden" id="158">
    <BOUNDS type="Node" left="7590" top="2010" width="100" height="100">
    </BOUNDS>
@@ -500,7 +490,7 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE id="1" componentmode="Hidden" systemname="Phong (EX9.MRE mdmod Static)" filename="Materials\Phong\Phong (EX9.MRE mdmod Static).v4p" nodename="Phong (EX9.MRE mdmod Static)" debug="0">
+   <NODE id="1" componentmode="Hidden" systemname="Phong (EX9.MRE mdmod ParticlesGPU-Modular Sprite)" filename="Materials\Phong\Phong (EX9.MRE mdmod ParticlesGPU-Modular Sprite).v4p" nodename="Phong (EX9.MRE mdmod ParticlesGPU-Modular Sprite)" debug="0">
    <PIN pinname="Shade all lights">
    </PIN>
    <PIN pinname="Transform" visible="1">
