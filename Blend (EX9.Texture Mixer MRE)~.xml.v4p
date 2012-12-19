@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="D:\Insync\zsolt.korai@kibu.hu\Tele_K\common\nodes\mre.mdmod\Blend (EX9.Texture Mixer MRE).v4p" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\effects\Blend (EX9.Texture Mixer MRE).v4p" systemname="Blend (EX9.Texture Mixer MRE)">
+   <PATCH nodename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\Blend (EX9.Texture Mixer MRE).v4p" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\effects\Blend (EX9.Texture Mixer MRE).v4p" systemname="Blend (EX9.Texture Mixer MRE)">
    <BOUNDS height="7800" left="16185" top="1965" type="Window" width="12435">
    </BOUNDS>
    <INFO author="unc" description="Blend two textures" tags="fx">
@@ -246,30 +246,94 @@
    </NODE>
    <LINK dstnodeid="11" dstpinname="Format" srcnodeid="25" srcpinname="Output Enum">
    </LINK>
-   <NODE componentmode="Hidden" filename="Blendmre.fx" id="26" nodename="Blendmre (EX9.Effect)" systemname="Blendmre (EX9.Effect)">
+   <NODE componentmode="Hidden" filename="Blendmre.fx" id="21" nodename="Blendmre (EX9.Effect)" systemname="Blendmre (EX9.Effect)">
    <BOUNDS height="270" left="2025" top="5415" type="Node" width="5055">
    </BOUNDS>
    <BOUNDS height="6210" left="7560" top="9120" type="Window" width="20805">
    </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="tex0" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="R XY" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Compiled" visible="1">
+   </PIN>
+   <PIN pinname="toBlack" visible="1">
+   </PIN>
+   <PIN pinname="fromBlack" visible="1">
+   </PIN>
+   <PIN pinname="fromWhite" visible="1">
+   </PIN>
+   <PIN pinname="toWhite" visible="1">
+   </PIN>
+   <PIN pinname="levels" visible="1">
+   </PIN>
+   <PIN pinname="levels " visible="1">
+   </PIN>
+   <PIN pinname="Technique Valid" visible="1">
+   </PIN>
+   <PIN pinname="Transform" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="OnlyChannels" visible="1">
+   </PIN>
+   <PIN pinname="SumMattes" visible="1">
+   </PIN>
+   <PIN pinname="tex1" visible="1">
+   </PIN>
+   <PIN pinname="tex2" visible="1">
+   </PIN>
+   <PIN pinname="tex3" visible="1">
+   </PIN>
+   <PIN pinname="DisableChannels " visible="1">
+   </PIN>
+   <PIN pinname="V " visible="1">
+   </PIN>
+   <PIN pinname="SumAlpha" visible="1">
+   </PIN>
+   <PIN pinname="fade" visible="1">
+   </PIN>
+   <PIN pinname="Fader" visible="1">
+   </PIN>
+   <PIN pinname="V" visible="1">
+   </PIN>
+   <PIN pinname="Col1" visible="1">
+   </PIN>
+   <PIN pinname="Col2" visible="1">
+   </PIN>
+   <PIN pinname="Source 2 Transparency" visible="1">
+   </PIN>
+   <PIN pinname="Opacity" visible="1">
+   </PIN>
    </NODE>
-   <LINK dstnodeid="19" dstpinname="Layers" linkstyle="PolyLine" srcnodeid="26" srcpinname="Layer">
+   <LINK dstnodeid="19" dstpinname="Layers" linkstyle="PolyLine" srcnodeid="21" srcpinname="Layer">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="Mesh" srcnodeid="15" srcpinname="Mesh">
+   <LINK dstnodeid="21" dstpinname="Mesh" srcnodeid="15" srcpinname="Mesh">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="Render State" srcnodeid="14" srcpinname="Render State Out">
+   <LINK dstnodeid="21" dstpinname="Render State" srcnodeid="14" srcpinname="Render State Out">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="tex0" srcnodeid="20" srcpinname="Output Node">
+   <LINK dstnodeid="21" dstpinname="tex0" srcnodeid="20" srcpinname="Output Node">
    </LINK>
-   <LINK dstnodeid="13" dstpinname="Input 1" srcnodeid="26" srcpinname="Compiled">
+   <LINK dstnodeid="13" dstpinname="Input 1" srcnodeid="21" srcpinname="Compiled">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="Enabled" srcnodeid="12" srcpinname="Y Output Value">
+   <LINK dstnodeid="21" dstpinname="Enabled" srcnodeid="12" srcpinname="Y Output Value">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="tex1" srcnodeid="7" srcpinname="Output Node">
+   <LINK dstnodeid="21" dstpinname="tex1" srcnodeid="7" srcpinname="Output Node">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="Technique" srcnodeid="3" srcpinname="Output Enum">
+   <LINK dstnodeid="21" dstpinname="Technique" srcnodeid="3" srcpinname="Output Enum">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="Opacity" srcnodeid="0" srcpinname="Y Output Value">
+   <LINK dstnodeid="21" dstpinname="Opacity" srcnodeid="0" srcpinname="Y Output Value">
    </LINK>
-   <LINK dstnodeid="26" dstpinname="R XY" srcnodeid="24" srcpinname="Output">
+   <LINK dstnodeid="21" dstpinname="R XY" srcnodeid="24" srcpinname="Output">
    </LINK>
    </PATCH>

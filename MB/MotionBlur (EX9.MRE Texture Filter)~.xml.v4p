@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="E:\Insync\microdee@mcro.de\Tele_K\common\nodes\mre.mdmod\MB\MotionBlur (EX9.MRE Texture Filter).v4p" systemname="MotionBlur" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\motionblur\MotionBlur.v4p">
+   <PATCH nodename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\MB\MotionBlur (EX9.MRE Texture Filter).v4p" systemname="MotionBlur" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\motionblur\MotionBlur.v4p">
    <BOUNDS type="Window" left="13125" top="9690" width="9000" height="6000">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -77,7 +77,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3120" top="795" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -260,6 +260,8 @@
    </LINK>
    <LINK srcnodeid="37" srcpinname="Output" dstnodeid="28" dstpinname="Input Node">
    </LINK>
+   <LINK srcnodeid="25" srcpinname="Texture Out" dstnodeid="37" dstpinname="Input 2">
+   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="6240" top="2040" width="0" height="0">
    </BOUNDS>
@@ -339,7 +341,5 @@
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="46" srcpinname="Mesh" dstnodeid="7" dstpinname="Mesh">
-   </LINK>
-   <LINK srcnodeid="25" srcpinname="Texture Out" dstnodeid="37" dstpinname="Input 2">
    </LINK>
    </PATCH>

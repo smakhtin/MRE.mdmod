@@ -18,6 +18,7 @@ float lAtt0 <String uiname="Light Attenuation 0"; float uimin=0.0;> = 0;
 float lAtt1 <String uiname="Light Attenuation 1"; float uimin=0.0;> = 0.3;
 float lAtt2 <String uiname="Light Attenuation 2"; float uimin=0.0;> = 0;
 float lPower <String uiname="Power"; float uimin=0.0;> = 25.0;     //shininess of specular highlight
+float dmod = 1;
 
 float4 lAmb  : COLOR <String uiname="Ambient Color";>  = {0.15, 0.15, 0.15, 1};
 float4 lEm  : COLOR <String uiname="Emission Color";>  = {0, 0, 0, 1};
@@ -58,8 +59,8 @@ float3 PhongPoint(float3 PosW, float3 NormV, float3 ViewDirV, float shadow, floa
     for(float i=0; i<lsamples; i++)
     {
         float index = i/lsamples;
-        float4 lDat1 = tex2D(lSamp, float2(i/lsamples, .25));
-        float4 lDat2 = tex2D(lSamp, float2(i/lsamples, .75));
+        float4 lDat1 = tex2D(lSamp, float2(index+0.5/lsamples, .25));
+        float4 lDat2 = tex2D(lSamp, float2(index+0.5/lsamples, .75));
 
         float3 lPos = lDat1.xyz;
         float lRange = lDat1.w;
@@ -71,11 +72,12 @@ float3 PhongPoint(float3 PosW, float3 NormV, float3 ViewDirV, float shadow, floa
         float3 diff = 0;
         float3 spec = 0;
         float specmap = tex2D(specSamp, TexCd).r;
+        atten = 1/(saturate(lAtt0) + saturate(lAtt1) * d + saturate(lAtt2) * pow(d, 2));
+        	
+        amb = lAmb.rgb * atten;
 
         if((d<lRange) && (!(((i==lindex) || shadeAll) && (shadow==0))))
         {
-            atten = 1/(saturate(lAtt0) + saturate(lAtt1) * d + saturate(lAtt2) * pow(d, 2));
-            amb = lAmb.rgb * atten;
 
             float3 LightDirW = normalize(lPos - PosW);
             float3 LightDirV = mul(LightDirW, tV);
@@ -92,7 +94,8 @@ float3 PhongPoint(float3 PosW, float3 NormV, float3 ViewDirV, float shadow, floa
             //calculate specular light
             spec = pow(max(dot(R, V),0), lPower*.2) * lSpec.rgb * lCol;
         }
-        outCol += ((amb/lsamples) + diff * diffAmount) + spec * specAmount * specmap;
+        outCol += (diff * diffAmount + spec * specAmount * specmap) * pow(saturate((lRange-d)/lRange),dmod);
+    	outCol += amb/lsamples;
         if((i==lindex) || shadeAll) outCol *= shadow;
     }
     outCol *= tex2D(diffSamp, TexCd).rgb;

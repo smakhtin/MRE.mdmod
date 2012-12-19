@@ -90,6 +90,7 @@ float4x4 ptWVP <string uiname="previus WorldViewProj Transform";>;
 float velGain <string uiname="Velocity Gain";> = 1;
 float3 mbcorr = float3(0.0039,-0.0075,-0.1);
 bool isPTxCd <string uiname="Position as Texture Coordinates";> = 0;
+float alphatest = 0.5;
 
 #include "phong.fxh"
 float3 mainlPos <string uiname="Main Light Position";> = 0;
@@ -386,6 +387,11 @@ col PS1(vs2ps2 In): COLOR
 	float3 ViewDirWV = -normalize(posb);
 	float shad = 1;
 	if(shadowsAmount!=0) shad = lerp(1, softShadows(posWb, In.PosWVP, mainlPos).shadow, shadowsAmount);
+	
+	float alphat = 1;
+	float alphatt = tex2D(diffSamp, uvb.xy).a;
+	alphat = alphatt;
+	if(alphatest!=0) alphat = lerp(alphatt, (alphatt>=alphatest), min(alphatest*10,1));
 
 	c.color.rgb = PhongPoint(
 		In.PosW,
@@ -394,12 +400,11 @@ col PS1(vs2ps2 In): COLOR
 		shad,
 		uvb.xy
 	);
-	c.color.a = 1;
 
 	//POSITION
     c.space.xyz = In.PosWV;
 	if(depth!=0) c.space.xyz += posb;
-    c.space.w   = 1.0f;
+    c.space.w = alphat;
 	
 	//ReflectRefract
 	if((reflectStrength!=0) || (refractStrength!=0))
@@ -426,14 +431,14 @@ col PS1(vs2ps2 In): COLOR
 	c.color += transColor*refractStrength*(1-fresnel);
 	}
 	
-	c.color.a = 1;
+	c.color.a = alphat;
     
     //NORMALS
     float3 norm = normb;
-    c.normal = float4(norm, gi);
+    c.normal = float4(norm, gi*alphat);
 	
 	c.vel = In.vel;
-	c.vel.a = 1;
+	c.vel.a = alphat;
 
     return c;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\mre.mdmod.test.v4p" systemname="simpleTest" filename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\simpleTest.v4p">
+   <PATCH nodename="D:\david\common\nodes\mre.mdmod\mre.mdmod.test.v4p" systemname="simpleTest" filename="D:\vvvv\md.vis\release\md.vis 1.1\common\nodes\modules\mre.mdmod\simpleTest.v4p">
    <BOUNDS type="Window" left="0" top="225" width="14415" height="12015">
    </BOUNDS>
    <NODE systemname="MRE (EX9.MRE mdmod)" filename="MRE (EX9.MRE mdmod).v4p" nodename="MRE (EX9.MRE mdmod)" componentmode="Hidden" id="0">
@@ -54,70 +54,6 @@
    <PIN pinname="Light Range">
    </PIN>
    <PIN pinname="Shadow Map" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Phong (EX9.MRE Static)" filename="Materials\Phong\Phong (EX9.MRE Static).v4p" nodename="Phong (EX9.MRE Static)" componentmode="Hidden" id="1" debug="0">
-   <BOUNDS type="Node" left="3195" top="6630" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="0" top="6120" width="18945" height="10080">
-   </BOUNDS>
-   <PIN pinname="Layer MRT" visible="1">
-   </PIN>
-   <PIN pinname="Layer VSM" visible="1">
-   </PIN>
-   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Emission Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Ambient Color" slicecount="1" values="|0.11307,0.01475,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Object Color" slicecount="1" values="|0.80538,0.80538,0.80538,1.00000|">
-   </PIN>
-   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Specular Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Shade all lights" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Power" slicecount="1" values="50">
-   </PIN>
-   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.15">
-   </PIN>
-   <PIN pinname="Light Attenuation 0" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Light Attenuation 2" slicecount="1" values="0.38">
-   </PIN>
-   <PIN pinname="Shadow Bias" slicecount="1" values="0.24">
-   </PIN>
-   <PIN pinname="Shadow Contrast" slicecount="1" values="0.1">
-   </PIN>
-   <PIN pinname="Displace" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Displacement Map" visible="1">
-   </PIN>
-   <PIN pinname="Displacement Normal Radius" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Bump Map" visible="1">
-   </PIN>
-   <PIN pinname="Normal Map" visible="1">
-   </PIN>
-   <PIN pinname="depth" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Specular Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Transform" visible="1">
-   </PIN>
-   <PIN pinname="Shadows Amount" slicecount="1" values="0.5">
-   </PIN>
-   <PIN pinname="Global Illumination Intensity" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Layer SM" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="SSAO (EX9.MRE Deffered)" filename="SSAO\SSAO (EX9.MRE Deffered).v4p" nodename="SSAO (EX9.MRE Deffered)" componentmode="Hidden" id="4">
@@ -342,12 +278,10 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Shade all lights">
-   </LINK>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="30">
    <BOUNDS type="Node" left="3210" top="8775" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Layer 1" visible="1">
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
    </PIN>
@@ -355,13 +289,11 @@
    </PIN>
    <PIN pinname="Layer Template Count" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Layer 3" visible="1">
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Layer 4" visible="1">
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 1">
-   </LINK>
    <NODE systemname="Constant_MRT (EX9.Effect)" filename="Materials\Constant\Constant_MRT.fx" nodename="Constant_MRT (EX9.Effect)" componentmode="Hidden" id="31">
    <BOUNDS type="Node" left="1515" top="7830" width="100" height="100">
    </BOUNDS>
@@ -427,13 +359,11 @@
    <NODE systemname="NormalMap (EX9.Texture Filter MRE)" filename="NormalMap (EX9.Texture Filter MRE).v4p" nodename="NormalMap (EX9.Texture Filter MRE)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="5205" top="6105" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="38" srcpinname="Output" dstnodeid="1" dstpinname="Normal Map">
-   </LINK>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="39">
    <BOUNDS type="Node" left="3495" top="15825" width="100" height="100">
    </BOUNDS>
@@ -459,7 +389,7 @@
    <LINK srcnodeid="40" srcpinname="Layer" dstnodeid="39" dstpinname="Layer 2">
    </LINK>
    <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="41">
-   <BOUNDS type="Node" left="5610" top="4410" width="100" height="100">
+   <BOUNDS type="Node" left="6330" top="4365" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -471,7 +401,7 @@
    </PIN>
    <PIN pinname="ScaleY" slicecount="1" values="-1.6">
    </PIN>
-   <PIN pinname="Rotate" slicecount="1" visible="1" values="0.970671186529216">
+   <PIN pinname="Rotate" slicecount="1" visible="1" values="0">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="42" systemname="IOBox (String)">
@@ -488,16 +418,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="45">
-   <BOUNDS type="Node" left="3495" top="4815" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   <PIN pinname="Pitch" slicecount="1" values="0.25">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="45" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
-   </LINK>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="675" top="9585" width="100" height="100">
    </BOUNDS>
@@ -523,30 +443,6 @@
    <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum background fpsS">
    </LINK>
    <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum forground fps">
-   </LINK>
-   <NODE systemname="TransformTexture (EX9.Texture Filter)" filename="%VVVV%\addonpack\lib\nodes\modules\TextureFX\Filter\TransformTexture\TransformTexture (EX9.Texture Filter).v4p" nodename="TransformTexture (EX9.Texture Filter)" componentmode="Hidden" id="47">
-   <BOUNDS type="Node" left="5190" top="5625" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Transform" visible="1">
-   </PIN>
-   <PIN pinname="MotionBlur Width" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="MotionBlur Iterations" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="41" srcpinname="Transform Out" dstnodeid="47" dstpinname="Transform">
-   </LINK>
-   <LINK srcnodeid="47" srcpinname="Output" dstnodeid="1" dstpinname="Bump Map">
-   </LINK>
-   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="47" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="47" srcpinname="Output" dstnodeid="38" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="47" srcpinname="Output" dstnodeid="1" dstpinname="Displacement Map">
    </LINK>
    <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="48">
    <BOUNDS type="Node" left="6405" top="3915" width="100" height="100">
@@ -586,80 +482,12 @@
    </LINK>
    <LINK srcnodeid="30" srcpinname="Layer" dstnodeid="0" dstpinname="Layer MRT">
    </LINK>
-   <NODE systemname="Phong (EX9.MRE Static)" filename="Materials\Phong\Phong (EX9.MRE Static).v4p" nodename="Phong (EX9.MRE Static)" componentmode="Hidden" id="66">
-   <BOUNDS type="Node" left="2430" top="2790" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="1170" top="5370" width="18945" height="10080">
-   </BOUNDS>
-   <PIN pinname="Layer MRT" visible="1">
-   </PIN>
-   <PIN pinname="Layer VSM" visible="1">
-   </PIN>
-   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Emission Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Ambient Color" slicecount="1" values="|0.08526,0.00000,0.00167,1.00000|">
-   </PIN>
-   <PIN pinname="Object Color" slicecount="1" values="|0.80538,0.80538,0.80538,1.00000|">
-   </PIN>
-   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Specular Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Shade all lights" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Power" slicecount="1" values="20">
-   </PIN>
-   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.15">
-   </PIN>
-   <PIN pinname="Light Attenuation 0" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Light Attenuation 2" slicecount="1" values="0.38">
-   </PIN>
-   <PIN pinname="Shadow Bias" slicecount="1" values="0.24">
-   </PIN>
-   <PIN pinname="Shadow Contrast" slicecount="1" visible="1" values="0.1">
-   </PIN>
-   <PIN pinname="Displace" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Displacement Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Displacement Normal Radius" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Bump Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Normal Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="depth" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Specular Map" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Render State" visible="1">
-   </PIN>
-   <PIN pinname="Velocity Gain" slicecount="1" values="0.1">
-   </PIN>
-   <PIN pinname="Shadows Amount" slicecount="1" visible="1" values="0.5">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Layer SM" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Box (EX9.Geometry)" nodename="Box (EX9.Geometry)" componentmode="Hidden" id="67">
    <BOUNDS type="Node" left="2595" top="1905" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Mesh" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="67" srcpinname="Mesh" dstnodeid="66" dstpinname="Mesh">
-   </LINK>
    <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="68">
    <BOUNDS type="Node" left="3675" top="2355" width="100" height="100">
    </BOUNDS>
@@ -676,8 +504,6 @@
    <PIN pinname="TranslateX" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="68" srcpinname="Transform Out" dstnodeid="66" dstpinname="Transform">
-   </LINK>
    <NODE systemname="Cull (EX9.RenderState)" nodename="Cull (EX9.RenderState)" componentmode="Hidden" id="69">
    <BOUNDS type="Node" left="2160" top="2370" width="100" height="100">
    </BOUNDS>
@@ -686,8 +512,6 @@
    <PIN pinname="Render State Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="69" srcpinname="Render State Out" dstnodeid="66" dstpinname="Render State">
-   </LINK>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="70">
    <BOUNDS type="Node" left="5175" top="8655" width="100" height="100">
    </BOUNDS>
@@ -702,8 +526,6 @@
    <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="66" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 3">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="71" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="4455" top="1815" width="0" height="0">
    </BOUNDS>
@@ -756,8 +578,6 @@
    </NODE>
    <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Focus Distance">
    </LINK>
-   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="66" dstpinname="Shade all lights">
-   </LINK>
    <LINK srcnodeid="31" srcpinname="Layer" dstnodeid="30" dstpinname="Layer 2">
    </LINK>
    <NODE systemname="lights" filename="lights.v4p" nodename="lights.v4p" componentmode="Hidden" id="76">
@@ -780,10 +600,6 @@
    </LINK>
    <LINK srcnodeid="76" srcpinname="range" dstnodeid="0" dstpinname="Light Range">
    </LINK>
-   <LINK srcnodeid="60" srcpinname="Output" dstnodeid="1" dstpinname="Displace">
-   </LINK>
-   <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="1" dstpinname="depth">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="77" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="3840" top="5895" width="0" height="0">
    </BOUNDS>
@@ -796,8 +612,6 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 1">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="78" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="3945" top="6195" width="0" height="0">
    </BOUNDS>
@@ -810,8 +624,6 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 2">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="79" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="3645" top="5475" width="0" height="0">
    </BOUNDS>
@@ -824,8 +636,6 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="79" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 0">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="80" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="5370" top="13440" width="0" height="0">
    </BOUNDS>
@@ -1040,8 +850,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <LINK srcnodeid="48" srcpinname="Output" dstnodeid="41" dstpinname="Rotate">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="5760" top="7770" width="0" height="0">
    </BOUNDS>
@@ -1062,66 +870,6 @@
    </NODE>
    <LINK srcnodeid="97" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Shadows Enabled">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 1">
-   </LINK>
-   <LINK srcnodeid="66" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 2">
-   </LINK>
-   <NODE systemname="Phong (EX9.MRE Spline)" filename="Materials\Phong\Phong (EX9.MRE Spline).v4p" nodename="Phong (EX9.MRE Spline)" componentmode="Hidden" id="99">
-   <BOUNDS type="Node" left="7335" top="2205" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="UseKernelTexture" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Layer MRT" visible="1">
-   </PIN>
-   <PIN pinname="Layer SM" visible="1">
-   </PIN>
-   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Update" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Control Points" visible="1">
-   </PIN>
-   <PIN pinname="Control Point per Curve Count" visible="1">
-   </PIN>
-   <PIN pinname="Mesh Transform" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Shade all lights" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Smooth Mesh Resolution" slicecount="1" visible="1" values="429">
-   </PIN>
-   <PIN pinname="thickness" slicecount="8" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Emission Color" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Ambient Color" slicecount="1" values="|0.01297,0.00307,0.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Specular Amount" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Specular Color" slicecount="1" values="|0.33920,0.33920,0.33920,1.00000|">
-   </PIN>
-   <PIN pinname="NeighbourRange" slicecount="1" values="10">
-   </PIN>
-   <PIN pinname="Object Color" slicecount="1" values="|0.29657,0.29554,0.25039,1.00000|">
-   </PIN>
-   <PIN pinname="Global Illumination Intensity" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Velocity Gain" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Bump Map" visible="1">
-   </PIN>
-   <PIN pinname="Normal Map" visible="1">
-   </PIN>
-   <PIN pinname="depth" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Texture Transform" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Cylinder (EX9.Geometry)" nodename="Cylinder (EX9.Geometry)" componentmode="Hidden" id="100">
    <BOUNDS type="Node" left="7500" top="585" width="100" height="100">
    </BOUNDS>
@@ -1230,10 +978,6 @@
    <PIN pinname="TranslateZ" slicecount="1" visible="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="109" srcpinname="Transform Out" dstnodeid="99" dstpinname="Mesh Transform">
-   </LINK>
-   <LINK srcnodeid="99" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 4">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="111" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="7575" top="90" width="0" height="0">
    </BOUNDS>
@@ -1328,12 +1072,6 @@
    <PIN pinname="CenterZ" slicecount="1" values="0.03">
    </PIN>
    </NODE>
-   <LINK srcnodeid="119" srcpinname="Transform Out" dstnodeid="99" dstpinname="Transform">
-   </LINK>
-   <LINK srcnodeid="115" srcpinname="Mesh" dstnodeid="99" dstpinname="Mesh">
-   </LINK>
-   <LINK srcnodeid="112" srcpinname="Y Output Value" dstnodeid="99" dstpinname="Smooth Mesh Resolution">
-   </LINK>
    <NODE systemname="B-Spline (3d)" nodename="B-Spline (3d)" componentmode="Hidden" id="124" filename="%VVVV%\lib\nodes\modules\3D\B-Spline (3D).v4p">
    <BOUNDS type="Node" left="12930" top="1470" width="100" height="100">
    </BOUNDS>
@@ -1382,10 +1120,6 @@
    </LINK>
    <LINK srcnodeid="125" srcpinname="Output" dstnodeid="124" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="99" dstpinname="Control Point per Curve Count">
-   </LINK>
-   <LINK srcnodeid="124" srcpinname="Ouput XYZ" dstnodeid="99" dstpinname="Control Points">
-   </LINK>
    <LINK srcnodeid="107" srcpinname="Y Output Value" dstnodeid="116" dstpinname="Spread Count">
    </LINK>
    <NODE systemname="B-Spline (Value)" nodename="B-Spline (Value)" componentmode="Hidden" id="127">
@@ -1401,8 +1135,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="125" srcpinname="Output" dstnodeid="127" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="127" srcpinname="Output" dstnodeid="99" dstpinname="thickness">
    </LINK>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="129">
    <BOUNDS type="Node" left="6405" top="120" width="100" height="100">
@@ -1480,8 +1212,6 @@
    </LINK>
    <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="105" dstpinname="Height">
    </LINK>
-   <LINK srcnodeid="99" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 3">
-   </LINK>
    <NODE systemname="Transform (Transform 2d)" nodename="Transform (Transform 2d)" componentmode="Hidden" id="135">
    <BOUNDS type="Node" left="11010" top="2910" width="100" height="100">
    </BOUNDS>
@@ -1500,10 +1230,6 @@
    <PIN pinname="CenterY" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="135" srcpinname="Transform Out" dstnodeid="99" dstpinname="Texture Transform">
-   </LINK>
-   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="99" dstpinname="Bump Map">
-   </LINK>
    <NODE systemname="NormalMap (EX9.Texture Filter MRE)" filename="NormalMap (EX9.Texture Filter MRE).v4p" nodename="NormalMap (EX9.Texture Filter MRE)" componentmode="Hidden" id="136">
    <BOUNDS type="Node" left="6795" top="5295" width="100" height="100">
    </BOUNDS>
@@ -1513,8 +1239,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="37" srcpinname="Output" dstnodeid="136" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="136" srcpinname="Output" dstnodeid="99" dstpinname="Normal Map">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="138" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="11670" top="2520" width="0" height="0">
@@ -1732,11 +1456,11 @@
    </LINK>
    <LINK srcnodeid="102" srcpinname="Y Output Value" dstnodeid="151" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="151" srcpinname="Output" dstnodeid="99" dstpinname="Update">
-   </LINK>
    <NODE systemname="Scene (Assimp)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Assimp.Nodes.dll" nodename="Scene (Assimp)" componentmode="Hidden" id="153">
    <BOUNDS type="Node" left="1050" top="1845" width="100" height="100">
    </BOUNDS>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="42" srcpinname="Output String" dstnodeid="153" dstpinname="Path">
    </LINK>
@@ -1744,8 +1468,298 @@
    <BOUNDS type="Node" left="1050" top="2385" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="154" srcpinname="Mesh" dstnodeid="1" dstpinname="Mesh">
-   </LINK>
    <LINK srcnodeid="153" srcpinname="Scene" dstnodeid="154" dstpinname="Scene">
+   </LINK>
+   <NODE systemname="Phong (EX9.MRE mdmod Static)" filename="Materials\Phong\Phong (EX9.MRE mdmod Static).v4p" nodename="Phong (EX9.MRE mdmod Static)" componentmode="Hidden" id="66">
+   <BOUNDS type="Node" left="2430" top="2790" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1170" top="5370" width="18945" height="10080">
+   </BOUNDS>
+   <PIN pinname="Layer MRT" visible="1">
+   </PIN>
+   <PIN pinname="Layer VSM" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Emission Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.08526,0.00000,0.00167,1.00000|">
+   </PIN>
+   <PIN pinname="Object Color" slicecount="1" values="|0.80538,0.80538,0.80538,1.00000|">
+   </PIN>
+   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Specular Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Shade all lights" visible="1">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Light Attenuation 1" slicecount="1" values="0.15">
+   </PIN>
+   <PIN pinname="Light Attenuation 0" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Light Attenuation 2" slicecount="1" values="0.38">
+   </PIN>
+   <PIN pinname="Shadow Bias" slicecount="1" values="0.24">
+   </PIN>
+   <PIN pinname="Shadow Contrast" slicecount="1" visible="1" values="0.1">
+   </PIN>
+   <PIN pinname="Displace" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Displacement Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Displacement Normal Radius" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Bump Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Normal Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="depth" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Specular Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Velocity Gain" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Shadows Amount" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Layer SM" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="67" srcpinname="Mesh" dstnodeid="66" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="Transform Out" dstnodeid="66" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Render State Out" dstnodeid="66" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="66" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="66" dstpinname="Shade all lights">
+   </LINK>
+   <LINK srcnodeid="66" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="Phong (EX9.MRE mdmod Static)" filename="Materials\Phong\Phong (EX9.MRE mdmod Static).v4p" nodename="Phong (EX9.MRE mdmod Static)" componentmode="Hidden" id="1" debug="0">
+   <BOUNDS type="Node" left="3195" top="6630" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="6120" width="18945" height="10080">
+   </BOUNDS>
+   <PIN pinname="Layer MRT" visible="1">
+   </PIN>
+   <PIN pinname="Layer VSM" visible="1">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Emission Color" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.11307,0.01475,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Object Color" slicecount="1" values="|0.80538,0.80538,0.80538,1.00000|">
+   </PIN>
+   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Specular Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Shade all lights">
+   </PIN>
+   <PIN pinname="Power" slicecount="1" values="50">
+   </PIN>
+   <PIN pinname="Light Attenuation 1">
+   </PIN>
+   <PIN pinname="Light Attenuation 0">
+   </PIN>
+   <PIN pinname="Light Attenuation 2">
+   </PIN>
+   <PIN pinname="Shadow Bias" slicecount="1" values="0.24">
+   </PIN>
+   <PIN pinname="Shadow Contrast" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Displace" visible="1">
+   </PIN>
+   <PIN pinname="Displacement Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Displacement Normal Radius" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Bump Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Normal Map" visible="1">
+   </PIN>
+   <PIN pinname="depth" visible="1">
+   </PIN>
+   <PIN pinname="Specular Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Shadows Amount" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Global Illumination Intensity" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Layer SM" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Shade all lights">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="38" srcpinname="Output" dstnodeid="1" dstpinname="Normal Map">
+   </LINK>
+   <LINK srcnodeid="60" srcpinname="Output" dstnodeid="1" dstpinname="Displace">
+   </LINK>
+   <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="1" dstpinname="depth">
+   </LINK>
+   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 1">
+   </LINK>
+   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 2">
+   </LINK>
+   <LINK srcnodeid="79" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Light Attenuation 0">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 1">
+   </LINK>
+   <NODE systemname="Phong (EX9.MRE mdmod Spline)" filename="Materials\Phong\Phong (EX9.MRE mdmod Spline).v4p" nodename="Phong (EX9.MRE mdmod Spline)" componentmode="Hidden" id="99">
+   <BOUNDS type="Node" left="7335" top="2205" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="UseKernelTexture" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer MRT" visible="1">
+   </PIN>
+   <PIN pinname="Layer SM" visible="1">
+   </PIN>
+   <PIN pinname="Position as Texture Coordinates" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Update" visible="1">
+   </PIN>
+   <PIN pinname="Control Points" visible="1">
+   </PIN>
+   <PIN pinname="Control Point per Curve Count" visible="1">
+   </PIN>
+   <PIN pinname="Mesh Transform" visible="1">
+   </PIN>
+   <PIN pinname="Shade all lights" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Smooth Mesh Resolution" visible="1">
+   </PIN>
+   <PIN pinname="thickness" visible="1">
+   </PIN>
+   <PIN pinname="Emission Color" slicecount="1" visible="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.01297,0.00307,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Specular Amount" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Diffuse Amount" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Specular Color" slicecount="1" values="|0.33920,0.33920,0.33920,1.00000|">
+   </PIN>
+   <PIN pinname="NeighbourRange" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Object Color" slicecount="1" values="|0.29657,0.29554,0.25039,1.00000|">
+   </PIN>
+   <PIN pinname="Global Illumination Intensity" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Velocity Gain" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Bump Map" visible="1">
+   </PIN>
+   <PIN pinname="Normal Map" visible="1">
+   </PIN>
+   <PIN pinname="depth" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Texture Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="109" srcpinname="Transform Out" dstnodeid="99" dstpinname="Mesh Transform">
+   </LINK>
+   <LINK srcnodeid="99" srcpinname="Layer MRT" dstnodeid="30" dstpinname="Layer 4">
+   </LINK>
+   <LINK srcnodeid="119" srcpinname="Transform Out" dstnodeid="99" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="115" srcpinname="Mesh" dstnodeid="99" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="112" srcpinname="Y Output Value" dstnodeid="99" dstpinname="Smooth Mesh Resolution">
+   </LINK>
+   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="99" dstpinname="Control Point per Curve Count">
+   </LINK>
+   <LINK srcnodeid="124" srcpinname="Ouput XYZ" dstnodeid="99" dstpinname="Control Points">
+   </LINK>
+   <LINK srcnodeid="127" srcpinname="Output" dstnodeid="99" dstpinname="thickness">
+   </LINK>
+   <LINK srcnodeid="99" srcpinname="Layer SM" dstnodeid="70" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="135" srcpinname="Transform Out" dstnodeid="99" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="99" dstpinname="Bump Map">
+   </LINK>
+   <LINK srcnodeid="136" srcpinname="Output" dstnodeid="99" dstpinname="Normal Map">
+   </LINK>
+   <LINK srcnodeid="151" srcpinname="Output" dstnodeid="99" dstpinname="Update">
+   </LINK>
+   <NODE systemname="Teapot (EX9.Geometry)" nodename="Teapot (EX9.Geometry)" componentmode="Hidden" id="156">
+   <BOUNDS type="Node" left="2745" top="3915" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="156" srcpinname="Mesh" dstnodeid="1" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="38" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="1" dstpinname="Bump Map">
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Transform Out" dstnodeid="1" dstpinname="Texture Transform">
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Output" dstnodeid="41" dstpinname="TranslateY">
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="1" dstpinname="Displacement Map">
+   </LINK>
+   <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="157">
+   <BOUNDS type="Node" left="3495" top="4815" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ScaleY" visible="1">
+   </PIN>
+   <PIN pinname="ScaleZ" visible="1">
+   </PIN>
+   <PIN pinname="TranslateY" slicecount="1" values="0.34">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="157" srcpinname="Transform Out" dstnodeid="1" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="158" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4320" top="4080" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4320" top="4080" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.41">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="158" srcpinname="Y Output Value" dstnodeid="157" dstpinname="ScaleX">
+   </LINK>
+   <LINK srcnodeid="158" srcpinname="Y Output Value" dstnodeid="157" dstpinname="ScaleY">
+   </LINK>
+   <LINK srcnodeid="158" srcpinname="Y Output Value" dstnodeid="157" dstpinname="ScaleZ">
    </LINK>
    </PATCH>

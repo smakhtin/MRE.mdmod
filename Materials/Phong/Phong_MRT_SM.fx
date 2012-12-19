@@ -1,8 +1,7 @@
-//@author: microdee
-//@description: Phong material for MRE.mdmod
+//@author: dottore
+//@description: Draws a surface using the data position texture. shading by phong directional
 //@tags: 3d surface
-//@credits: dottore
-
+//@credits: 
 // --------------------------------------------------------------------------------------------------
 // PARAMETERS:
 // --------------------------------------------------------------------------------------------------
@@ -76,6 +75,7 @@ sampler2D prevdisp_map = sampler_state
 };
 float Displace = 0;
 float prevDisplace = 0;
+float displaceOffset = 0;
 
 #include "..\shadows.fxh"
 float shadowsAmount = 0;
@@ -83,9 +83,11 @@ float shadowsAmount = 0;
 float velGain <string uiname="Velocity Gain";> = 1;
 float3 mbcorr = float3(0.0039,-0.0075,-0.1);
 bool isPTxCd <string uiname="Position as Texture Coordinates";> = 0;
+float alphatest = 0.5;
 float depth = 0;
 float posDepth = 0.3;
 float normamount = 1;
+float bumpOffset = 0;
 bool DEPTH_BIAS = false;
 bool BORDER_CLAMP = false;
 float3 size_source;
@@ -146,6 +148,14 @@ sampler2D fresnelSampler = sampler_state
 	MagFilter = Linear;
 	MipFilter = None;
 };
+texture ReflM <string uiname="Reflection Map";>;
+sampler2D reflmap = sampler_state
+{
+	Texture = <ReflM>;
+	MinFilter = Linear;
+	MagFilter = Linear;
+	MipFilter = Linear;
+};
 float gi <string uiname="Global Illumination Intensity";> = 1;
 
 // -----------------------------------------------------------------------------
@@ -175,7 +185,7 @@ float3 cone(float2 uv0, float3 eyeVec, sampler2D cone_map)
 	
 	for( int i=0;i<NUM_ITERATIONS; i++ )
 	{
-		float4 tex = tex2D(cone_map, rayPos.xy);
+		float4 tex = tex2D(cone_map, rayPos.xy)+bumpOffset;
 		float height = saturate(tex.w - rayPos.z);
 
 		float cone_ratio = tex.z*tex.z;
@@ -245,16 +255,16 @@ vs2ps2 VS(appdata In)
     vs2ps2 Out = (vs2ps2)0;
 	
 	if(isPTxCd) Out.TexCd = mul(In.PosO, tTex);
-	else Out.TexCd = mul(In.TexCdO, tTex);
+	else Out.TexCd = mul(float4(In.TexCdO,0,1), tTex);
 	
 	float4 dispPos = In.PosO;
 	float3 dispNorm = In.NormO;
 	float4 pdispPos = In.PosO;
 	if(Displace!=0)
 	{
-		dispPos += tex2Dlod(disp_map, float4(Out.TexCd,0,1)).r * float4(In.NormO,1) * Displace;
+		dispPos += tex2Dlod(disp_map, float4(Out.TexCd,0,1)).r * float4(In.NormO,1) * Displace + displaceOffset;
 		dispPos.w = 1;
-		pdispPos += tex2Dlod(prevdisp_map, float4(Out.TexCd,0,1)).r * float4(In.NormO,1) * prevDisplace;
+		pdispPos += tex2Dlod(prevdisp_map, float4(Out.TexCd,0,1)).r * float4(In.NormO,1) * prevDisplace + displaceOffset;
 		pdispPos.w = 1;
 		dispNorm += ((2 * (tex2Dlod(dispNorm_map, float4(Out.TexCd,0,1)))) - 1.0)*-Displace;
 	}
@@ -265,7 +275,7 @@ vs2ps2 VS(appdata In)
     Out.PosWVPp = mul(dispPos, tWVP);
 	float3 npos = Out.PosWVP.xyz;
 	float3 pnpos = mul(pdispPos, ptWVP).xyz;
-	Out.vel.rgb = (npos - pnpos) * velGain + mbcorr;
+	Out.vel.rgb = ((npos - pnpos) * velGain + mbcorr);
 	Out.vel.a = 1;
 
     //normal in view space
@@ -315,6 +325,11 @@ col PS1(vs2ps2 In): COLOR
 	float3 ViewDirWV = -normalize(posb);
 	float shad = 1;
 	if(shadowsAmount!=0) shad = lerp(1, softShadows(posWb, In.PosWVP, mainlPos).shadow, shadowsAmount);
+	
+	float alphat = 1;
+	float alphatt = tex2D(diffSamp, uvb.xy).a * lDiff.a;
+	alphat = alphatt;
+	if(alphatest!=0) alphat = lerp(alphatt, (alphatt>=alphatest), min(alphatest*10,1));
 
 	c.color.rgb = PhongPoint(
 		In.PosW,
@@ -323,12 +338,11 @@ col PS1(vs2ps2 In): COLOR
 		shad,
 		uvb.xy
 	);
-	c.color.a = 1;
 
 	//POSITION
     c.space.xyz = In.PosWV;
 	if(depth!=0) c.space.xyz += posb*.1;
-    c.space.w   = 1.0f;
+    c.space.w = alphat;
 	
 	//ReflectRefract
 	if((reflectStrength!=0) || (refractStrength!=0))
@@ -351,18 +365,18 @@ col PS1(vs2ps2 In): COLOR
     	half3 rrT = refract2(-rrV, rrN, etas[i], fail);
     	transColor += texCUBE(environmentMapSampler, rrT)* colors[i];
 	}
-	c.color += reflColor*reflectStrength*2*fresnel;
+	c.color += reflColor*reflectStrength*2*fresnel*tex2D(reflmap, float2(uvb.x*-1, uvb.y));
 	c.color += transColor*refractStrength*(1-fresnel);
 	}
 	
-	c.color.a = 1;
+	c.color.a = alphat;
     
     //NORMALS
     float3 norm = normb;
-    c.normal = float4(norm, gi);
+    c.normal = float4(norm, gi*alphat);
 	
 	c.vel = In.vel;
-	c.vel.a = 1;
+	c.vel.a = alphat;
 
     return c;
 }
@@ -376,7 +390,6 @@ technique Phong_PointLight
     pass P0
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
-    	ALPHABLENDENABLE = FALSE;
         VertexShader = compile vs_3_0 VS();
         PixelShader  = compile ps_3_0 PS1();
     }

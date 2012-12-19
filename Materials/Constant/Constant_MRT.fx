@@ -58,7 +58,7 @@ vs2ps VS(
     Out.position = mul(PosO, tWVP);
 	float3 npos = Out.position.xyz;
 	float3 pnpos = mul(PosO, ptWVP).xyz;
-	Out.vel.rgb = (npos - pnpos) * velGain + mbcorr;
+	Out.vel.rgb = ((npos - pnpos) * velGain + mbcorr);
 	Out.vel.a = 1;
     
     //transform texturecoordinates
@@ -107,7 +107,7 @@ technique TSimpleShader
     pass SSAO_FillFront
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
-    	ALPHABLENDENABLE = FALSE;
+    	//ALPHABLENDENABLE = FALSE;
         VertexShader = compile vs_3_0 VS();
         PixelShader  = compile ps_3_0 PS();
     }
