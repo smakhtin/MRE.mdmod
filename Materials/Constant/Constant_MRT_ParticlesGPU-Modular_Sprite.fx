@@ -10,12 +10,27 @@ float4x4 tVP: VIEWPROJECTION;
 float4x4 tWV: WORLDVIEW;
 float4x4 tWVP: WORLDVIEWPROJECTION;
 
+float MotionBlurMult = 1;
+float3 mbcorr = float3(0.0039,-0.0075,-0.1);
+
 float2 ViewportSize;
+float4x4 PreviousTransformWV;
+
+float FakeVelocity = 1;
 
 texture TranslateScaleTex <string uiname="TranslateXYZ (XYZ), UniformScale (W)";>;
 sampler TranslateScaleSamp = sampler_state
 {
     Texture   = (TranslateScaleTex);          
+    MipFilter = LINEAR;                    
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+};
+
+texture PreviousTranslateScaleTex <string uiname="Previous TranslateXYZ (XYZ), UniformScale (W)";>;
+sampler PreviousTranslateScaleSamp = sampler_state
+{
+    Texture   = (PreviousTranslateScaleTex);          
     MipFilter = LINEAR;                    
     MinFilter = LINEAR;
     MagFilter = LINEAR;
@@ -34,9 +49,10 @@ float4 Color :COLOR = 1;
 
 struct vs2ps
 {
-    float4 PosWV : POSITION;
+    float4 PosWV : TEXCOORD2;
+	float4 PosWVP: POSITION;
     float4 NormWV : NORMAL;
-    float4 Velocity : TEXCOORD7;
+    float4 Vel : COLOR7;
     float4 TextureTexCd : TEXCOORD1;
     float Size : PSIZE;
 };
@@ -49,16 +65,28 @@ vs2ps VS(
     float4 NormO : NORMAL)
 {
     vs2ps Out = (vs2ps)0;
+	float4 pTransform = 0;
     
     float4 particleTransform = tex2Dlod(TranslateScaleSamp, TransformTexCd);
+	float4 previousParticleTransform = tex2Dlod(PreviousTranslateScaleSamp, TransformTexCd);
     
+	pTransform.w = Pos.w;
+	pTransform.xyz = Pos.xyz + particleTransform.xyz;
+	
     Pos.xyz  += particleTransform.xyz;
     
     Out.PosWV = mul(Pos, tWV);
+	Out.PosWVP = mul(Pos, tWVP);
+	
+	pTransform = mul(pTransform, PreviousTransformWV);
+	
+	//Out.Vel.xyz = 0 * MotionBlurMult + mbcorr;
+	Out.Vel.xyz = (Out.PosWV.xyz - pTransform.xyz) * MotionBlurMult + mbcorr;
+	Out.Vel.w = 1;
     
     Out.TextureTexCd = TextureTexCd;
 
-    Out.NormWV = normalize(mul(In.NormO, tWV));
+    Out.NormWV = normalize(mul(NormO, tWV));
 	
 	float size = min(ViewportSize.x, ViewportSize.y);
 	
@@ -70,7 +98,7 @@ vs2ps VS(
 		projScaleMax /=	2;
 	}
 	
-	Out.Size = (size / 2) * (projScaleMax / Out.Pos.z) * particleTransform.w;
+	Out.Size = (size / 2) * (projScaleMax / Out.PosWV.z) * particleTransform.w;
     
 	return Out;
 }
@@ -88,15 +116,15 @@ struct output
 
 output MAIN_PS(vs2ps In): COLOR
 {
-	output out = (output)0;
+	output Out = (output)0;
 	
-	out.color = tex2D(Samp, In.TextureTexCd) * Color;
-	out.space = In.PosWV;
-	out.normal = In.NormWV;
+	Out.color = tex2D(Samp, In.TextureTexCd) * Color;
+	Out.space = In.PosWV;
+	Out.normal = In.NormWV;
 
-	out.velocity = 1;
+	Out.velocity = In.Vel;
 
-    return tex2D(Samp, In.TextureTexCd) * Color;
+    return Out;
 }
 
 technique Main
