@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta28.1.dtd" >
-   <PATCH nodename="C:\Users\algar_000\Documents\GitRepos\MRE.mdmod\Materials\Constant\Constant (EX9.MRE mdmod ParticlesGPU-Modular Sprite).v4p" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\materials\Phong (EX9.MRE static).v4p" systemname="Phong (EX9.MRE static)">
-   <BOUNDS height="18000" left="930" top="0" type="Window" width="13935">
+   <PATCH nodename="C:\Users\Smakhtin\Documents\GitRepos\MRE.mdmod\Materials\Constant\Constant (EX9.MRE mdmod ParticlesGPU-Modular Sprite).v4p" filename="D:\vvvv\md.vis\md.vis 1.1.beta.2\common\nodes\modules\MRE\materials\Phong (EX9.MRE static).v4p" systemname="Phong (EX9.MRE static)">
+   <BOUNDS height="16440" left="4140" top="1035" type="Window" width="13935">
    </BOUNDS>
    <NODE componentmode="InABox" id="24" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="570" top="7830" type="Node" width="0">
@@ -13,9 +13,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="104" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="3990" top="330" type="Node" width="0">
+   <BOUNDS height="0" left="3255" top="1380" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="3990" top="330" type="Box" width="795">
+   <BOUNDS height="240" left="3255" top="1380" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -301,9 +301,9 @@
    <LINK srcnodeid="237" srcpinname="Y Output Value" dstnodeid="100" dstpinname="ViewportSize XY">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="238" systemname="IOBox (Node)">
-   <BOUNDS type="Node" left="7395" top="2415" width="0" height="0">
+   <BOUNDS type="Node" left="7710" top="4470" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="7395" top="2415" width="795" height="240">
+   <BOUNDS type="Box" left="7710" top="4470" width="795" height="240">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -324,52 +324,8 @@
    </NODE>
    <LINK srcnodeid="238" srcpinname="Output Node" dstnodeid="239" dstpinname="Texture In">
    </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="250" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="13530" top="2070" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="13530" top="2070" width="795" height="240">
-   </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" encoded="0" values="mre.tVP">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" encoded="0" values="devnul">
-   </PIN>
-   <PIN pinname="File Mask" slicecount="1" encoded="0" values="||">
-   </PIN>
-   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
-   </PIN>
-   <PIN pinname="Output String" visible="1">
-   </PIN>
-   </NODE>
-   <NODE componentmode="Hidden" hiddenwhenlocked="1" id="249" nodename="String2Enum (Enumerations)" systemname="String2Enum (Enumerations)">
-   <BOUNDS height="100" left="13530" top="2520" type="Node" width="100">
-   </BOUNDS>
-   <PIN encoded="0" pinname="String Value" visible="1">
-   </PIN>
-   <PIN pinname="Enum" visible="1">
-   </PIN>
-   </NODE>
-   <NODE componentmode="Hidden" id="248" nodename="R (Node)" systemname="R (Node)">
-   <BOUNDS height="100" left="13530" top="2895" type="Node" width="100">
-   </BOUNDS>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
-   <PIN pinname="Receive String" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="248" dstpinname="Receive String" srcnodeid="249" srcpinname="Enum">
-   </LINK>
-   <LINK srcnodeid="250" srcpinname="Output String" dstnodeid="249" dstpinname="String Value">
-   </LINK>
-   <NODE systemname="GetMatrix (Transform)" nodename="GetMatrix (Transform)" componentmode="Hidden" id="247">
-   <BOUNDS type="Node" left="15795" top="4695" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Transform" visible="1">
-   </PIN>
-   <PIN pinname="Matrix Out" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="246">
-   <BOUNDS type="Node" left="15795" top="4185" width="100" height="100">
+   <BOUNDS type="Node" left="8595" top="3795" width="1425" height="270">
    </BOUNDS>
    <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
    </PIN>
@@ -377,49 +333,9 @@
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
-   </NODE>
-   <LINK srcnodeid="246" srcpinname="Transform Out" dstnodeid="247" dstpinname="Transform">
-   </LINK>
-   <NODE systemname="FrameDelay (Animation)" nodename="FrameDelay (Animation)" componentmode="Hidden" id="245">
-   <BOUNDS type="Node" left="15765" top="5175" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output 1" visible="1">
+   <PIN pinname="Descriptive Name" slicecount="1" values="WorldView" encoded="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="247" srcpinname="Matrix Out" dstnodeid="245" dstpinname="Input 1">
-   </LINK>
-   <NODE systemname="SetMatrix (Transform)" nodename="SetMatrix (Transform)" componentmode="Hidden" id="244">
-   <BOUNDS type="Node" left="14985" top="5775" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Matrix In" visible="1">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="245" srcpinname="Output 1" dstnodeid="244" dstpinname="Matrix In">
-   </LINK>
-   <LINK srcnodeid="244" srcpinname="Transform Out" dstnodeid="100" dstpinname="PreviousTransformW">
-   </LINK>
-   <NODE systemname="R (Node)" nodename="R (Node)" componentmode="Hidden" id="251">
-   <BOUNDS type="Node" left="15825" top="3555" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input Value" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="252" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Node" left="15795" top="2895" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="15795" top="2895" width="1590" height="240">
-   </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" values="mre.tV">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="252" srcpinname="Output Enum" dstnodeid="251" dstpinname="Receive String">
-   </LINK>
-   <LINK srcnodeid="244" srcpinname="Transform Out" dstnodeid="100" dstpinname="PreviousTransformWV">
-   </LINK>
    <LINK srcnodeid="239" srcpinname="Texture Out" dstnodeid="100" dstpinname="Previous TranslateXYZ (XYZ), UniformScale (W)">
    </LINK>
    <LINK srcnodeid="104" srcpinname="Output Node" dstnodeid="246" dstpinname="Transform In 1">
@@ -438,6 +354,54 @@
    </NODE>
    <LINK srcnodeid="253" srcpinname="Y Output Value" dstnodeid="100" dstpinname="MotionBlurMult">
    </LINK>
-   <LINK srcnodeid="251" srcpinname="Input Value" dstnodeid="246" dstpinname="Transform In 2">
+   <NODE systemname="String2Enum (Enumerations)" nodename="String2Enum (Enumerations)" componentmode="Hidden" id="254">
+   <BOUNDS type="Node" left="9960" top="2685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="String Value" visible="1">
+   </PIN>
+   <PIN pinname="Enum" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="255" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="9975" top="2040" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9975" top="2040" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" encoded="0" values="mre.tV">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" encoded="0" values="devnul">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="255" srcpinname="Output String" dstnodeid="254" dstpinname="String Value">
+   </LINK>
+   <NODE systemname="R (Node)" nodename="R (Node)" componentmode="Hidden" id="256">
+   <BOUNDS type="Node" left="9945" top="3285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Receive String" visible="1">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="254" srcpinname="Enum" dstnodeid="256" dstpinname="Receive String">
+   </LINK>
+   <LINK srcnodeid="256" srcpinname="Input Value" dstnodeid="246" dstpinname="Transform In 2">
+   </LINK>
+   <NODE systemname="FrameDelay (Transform)" filename="..\..\..\ParticlesGPU-Modular\FrameDelay (Transform).v4p" nodename="FrameDelay (Transform)" componentmode="Hidden" id="257">
+   <BOUNDS type="Node" left="8595" top="4665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="257" srcpinname="Transform Out" dstnodeid="100" dstpinname="PreviousTransformWV">
+   </LINK>
+   <LINK srcnodeid="246" srcpinname="Transform Out" dstnodeid="257" dstpinname="Transform">
    </LINK>
    </PATCH>
